@@ -1,0 +1,38 @@
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: #fff3e0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+.container {
+  text-align: center;
+}
+.buttons {
+  margin-top: 20px;
+}
+button {
+  padding: 10px 20px;
+  font-size: 18px;
+  margin: 10px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+#noBtn:hover {
+  transform: scale(0.6);
+}
+.option {
+  display: inline-block;
+  margin: 20px;
+  cursor: pointer;
+}
+.option img {
+  width: 200px;
+  border-radius: 10px;
+}
+.option p {
+  font-size: 20px;
+  margin-top: 10px;
+}

@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Italiani Pizza – Hàn Thuyên</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 40px;
+      font-family: Arial, sans-serif;
+      background-color: #fff7ed;
+      color: #333;
+    }
+
+    .banner-container {
+      position: relative;
+      width: 100%;
+      height: 300px; /* giảm chiều cao */
+      overflow: hidden;
+      border-radius: 12px;
+      margin-bottom: 30px;
+    }
+
+    .banner {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: bottom center; /* focus phần dưới ảnh */
+      display: block;
+    }
+
+    .banner-title {
+      position: absolute;
+      bottom: 20px;
+      left: 30px;
+      color: white;
+      font-size: 32px;
+      font-weight: bold;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+    }
+
+    .banner-subtitle {
+      font-size: 18px;
+      font-weight: normal;
+      margin-top: 6px;
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.6);
+    }
+
+    .about-restaurant {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      margin-top: 10px;
+    }
+
+    .about-text {
+      flex: 1 1 300px;
+    }
+
+    .about-text h2 {
+      font-size: 32px;
+      margin-bottom: 12px;
+    }
+
+    .about-text p {
+      font-size: 25px;
+      line-height: 1.7;
+      color: #444;
+    }
+
+    .image-gallery {
+      flex: 1 1 300px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      justify-content: center;
+    }
+
+    .image-gallery img {
+      width: 100%;
+      max-width: 300px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      object-fit: cover;
+    }
+
+    .map-link {
+      display: block;
+      margin: 40px 0 20px;
+      color: #0066cc;
+      text-decoration: none;
+      font-size: 16px;
+    }
+
+    .map-link:hover {
+      text-decoration: underline;
+    }
+
+    .nav-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin: 40px auto 20px;
+  max-width: 600px;
+  flex-wrap: wrap;
+}
+
+
+.nav-buttons button {
+  padding: 12px 24px;
+  font-size: 16px;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: bold;
+  color: white;
+}
+
+.nav-buttons button:first-child {
+  background-color: #ff9aa2; /* hồng nhẹ */
+}
+
+.nav-buttons button:last-child {
+  background-color: #a2d2ff; /* xanh pastel */
+}
+
+.nav-buttons button:hover {
+  opacity: 0.9;
+  transform: scale(1.05);
+}
+
+
+    @media (max-width: 768px) {
+      .banner-title {
+        font-size: 22px;
+        left: 20px;
+        bottom: 15px;
+      }
+
+      .banner-subtitle {
+        font-size: 15px;
+      }
+
+      .image-gallery img {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="banner-container">
+    <img src="images/westernbanner.png" alt="Banner" class="banner">
+    <div class="banner-title">
+      🍝 Italiani Pizza – Hàn Thuyên
+      <div class="banner-subtitle">Nhà hàng nhỏ xinh giữa trung tâm</div>
+    </div>
+  </div>
+
+  <div class="about-restaurant">
+    <div class="about-text">
+      <h2>Đôi điều về chổ nì</h2>
+      <p>
+       Chổ này em được recommend bởi chị Nga, và em có đi research thì thấy chổ này cũng ổn vì có đa dạng món, đánh giá cao trên google
+       cũng như chất lượng phục vụ cũng ok đó ạ. Với lại vừa đáp ứng là đồ Âu mà vừa là đồ sợi theo sở thích của chị thì em chỉ nghỉ đến đồ Ý thôi hẹ hẹ. 
+      </p>
+    </div>
+    <div class="image-gallery">
+      <img src="images/western2.1.png" alt="Không gian 1" />
+      <img src="images/western2.2.png" alt="Không gian 2" />
+      <img src="images/western2.3.png" alt="Không gian 3" />
+    </div>
+  </div>
+
+  <a href="https://maps.app.goo.gl/Lq7qDJoq4B6bo5GTA" target="_blank" class="map-link">
+    📍 Xem bản đồ click vào đây nhé
+  </a>
+
+  <div class="nav-buttons">
+    <button onclick="window.location.href='walk.html?restaurant=' + encodeURIComponent('🍝 Italiani Pizza – Hàn Thuyên')">
+      Chốt chổ này nhóo
+    </button>
+    
+
+
+    <button onclick="window.location.href='cuisine.html'">Xem thêm option khác </button>
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Xác nhận buổi hẹn</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 40px;
+      font-family: 'Arial', sans-serif;
+      background-color: #fff7ed;
+      color: #333;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .letter-container {
+      background: #fff;
+      border: 2px solid #ccc;
+      border-radius: 12px;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+      padding: 40px;
+      max-width: 600px;
+      width: 100%;
+      position: relative;
+      background-image: url('images/envelope.png'); /* nếu có ảnh thư nền */
+      background-size: cover;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 28px;
+      margin-bottom: 20px;
+    }
+
+    p {
+      font-size: 20px;
+      line-height: 1.6;
+      margin-bottom: 30px;
+      text-align: center;
+    }
+
+    button {
+      padding: 14px 22px;
+      font-size: 16px;
+      background-color: #ffcc91;
+      color: #333;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #f8b14d;
+    }
+
+    .back {
+      margin-top: 20px;
+      font-size: 14px;
+      color: #555;
+      cursor: pointer;
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="letter-container">
+    <h1>📩 Thư xác nhận</h1>
+    <p>
+      Vậy thì hôm thứ Tư này mình sẽ đi ăn ở chỗ <strong id="selected-place">...</strong>, sau đó mình đi bộ ở <strong>Creative Park</strong> nhé.<br/>
+      Hẹn chị lúc <strong>6:30</strong> 💛
+    </p>
+    <button onclick="sendConfirmation()">Chốt luôn ✨</button>
+    <div class="back" onclick="window.history.back()">← Quay lại chọn khác</div>
+  </div>
+
+  <script>
+    // Lấy param từ URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const restaurant = urlParams.get("restaurant") || "Nhà hàng bí ẩn";
+    document.getElementById("selected-place").textContent = restaurant;
+
+    function sendConfirmation() {
+      fetch("https://script.google.com/macros/s/AKfycbxlZsEtUyME-IP3cJdj_GOxZ1yGmwZ08HstdmaM2ISl1AHgpSIhavm1z8qN5PlN1JQfPA/exec", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({ restaurant: restaurant })
+      })
+      .then(() => {
+        alert("✅ Đã gửi xác nhận! Hẹn chị lúc 6:30 nha 🥰");
+      })
+      .catch((err) => {
+        alert("Lỗi khi gửi xác nhận 😥");
+        console.error(err);
+      });
+    }
+  </script>
+
+</body>
+</html>
